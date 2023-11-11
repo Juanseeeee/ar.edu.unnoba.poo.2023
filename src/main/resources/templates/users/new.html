@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuevo Usuario</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2 class="mb-4">Nuevo Usuario</h2>
+    <form th:action="@{/users/new}" th:object="${user}" method="post">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:field="*{email}" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" th:field="*{apellido}" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" th:field="*{password}" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+    </form>
+
+    <br>
+
+    <a th:href="@{/usuarios}" class="btn btn-secondary">Volver a la Lista de Usuarios</a>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
